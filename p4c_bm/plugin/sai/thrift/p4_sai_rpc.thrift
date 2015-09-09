@@ -53,49 +53,7 @@ struct sai_attribute_list {
     3: list<sai_attribute> attr_list;
 }
 
-//:: def get_type(byte_width):
-//::   if byte_width == 1:
-//::     return "byte"
-//::   elif byte_width == 2:
-//::     return "i16"
-//::   elif byte_width <= 4:
-//::     return "i32"
-//::   elif byte_width == 6:
-//::     return "MacAddr_t"
-//::   elif byte_width == 16:
-//::     return "IPv6_t"
-//::   else:
-//::     return "string"
-//::   #endif
-//:: #enddef
-//::
-//:: # match_fields is list of tuples (name, type)
-//:: def gen_match_params(match_fields, field_info):
-//::   params = []
-//::   for field, type in match_fields:
-//::     if type == "valid":
-//::       params += [(field + "_valid", 1)]
-//::       continue
-//::     #endif
-//::     f_info = field_info[field]
-//::     bytes_needed = (f_info["bit_width"] + 7 ) / 8
-//::     params += [(field, bytes_needed)]
-//::     if type == "lpm": params += [(field + "_prefix_length", 2)]
-//::     if type == "ternary": params += [(field + "_mask", bytes_needed)]
-//::   #endfor
-//::   return params
-//:: #enddef
-//::
-//:: def gen_action_params(names, byte_widths, _get_type = get_type):
-//::   params = []
-//::   for name, width in zip(names, byte_widths):
-//::     name = "action_" + name
-//::     params += [(name, width)]
-//::   #endfor
-//::   return params
-//:: #enddef
-//::
-//::
+//:: from common import *
 
 # Match structs
 
